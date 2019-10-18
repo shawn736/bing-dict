@@ -8,7 +8,8 @@ curl -SsL "http://cn.bing.com/dict/search?q=$word" |\
 		c=0;
 		for(i=1;i<=NF;i++) {
 			if(match($i, "^[a-z]+\\.|网络释义：$") != 0) {
-				if(c!=0) printf "\n";
+        # 插入换行符号，iOS里解析才能换行
+				if(c!=0) printf "\\n";
 				c++;
 			}
       # 只输出释义，去掉发音
