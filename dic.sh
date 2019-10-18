@@ -12,7 +12,7 @@ curl -SsL "http://cn.bing.com/dict/search?q=$word" |\
 				c++;
 			}
       # 只输出释义，去掉发音
-      if(match($i, "美\\[") == 0 || match($i, "英\\[") == 0) {
+      if(match($i, "美\\[") == 0 && match($i, "英\\[") == 0) {
         printf "%s ",$i;
       }
 		}
